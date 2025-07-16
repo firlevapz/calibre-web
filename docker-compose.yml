@@ -1,0 +1,10 @@
+
+services:
+  calibre-web:
+    build: .
+    ports:
+      - "8083:8083"
+    volumes:
+      - .:/app
+      - /home/fabian/Documents/calibre:/books
+    restart: unless-stopped
