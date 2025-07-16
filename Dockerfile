@@ -13,13 +13,17 @@ RUN apt-get update && apt-get install -y \
     zlib1g-dev \
     libjpeg-dev \
     libpng-dev \
+    libldap2-dev \
+    libsasl2-dev \
+    libssl-dev \
+    calibre \
     && rm -rf /var/lib/apt/lists/*
 
 # Copy requirements files
-COPY requirements.txt .
+COPY requirements.txt optional-requirements.txt ./
 
 # Install Python dependencies
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt -r optional-requirements.txt
 
 # Copy application code
 COPY . .
