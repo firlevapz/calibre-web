@@ -18,6 +18,7 @@ RUN apt-get update && apt-get install -y \
     python3-venv \
     sqlite3 \
     xdg-utils \
+    unrar-free \
     calibre \
     && rm -rf /var/lib/apt/lists/*
 
